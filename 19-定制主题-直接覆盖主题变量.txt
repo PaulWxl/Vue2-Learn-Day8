@@ -1,0 +1,19 @@
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
+        lessOptions: {
+          modifyVars: {
+            // 直接覆盖变量
+            'nav-bar-background-color': '#4e6efb',
+            'nav-bar-title-font-size': '16px',
+            'nav-bar-title-text-color': '#fff'
+          },
+        },
+      },
+    },
+  }
+}
+
+这种方法每次更改后需要重启服务器才能看效果，实际开发中不采用这种方法。

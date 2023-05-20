@@ -1,0 +1,1 @@
+[定制主题] - 核心原理: less 变量的覆盖。- 在入口文件中导入 less 文件 - import 'vant/lib/index.less' 

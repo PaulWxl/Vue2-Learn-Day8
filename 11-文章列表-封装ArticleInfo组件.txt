@@ -1,0 +1,1 @@
+在 components 文件夹下先创建 Article文件夹，再创建 ArticleInfo.vue 

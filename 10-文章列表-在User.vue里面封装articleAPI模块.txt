@@ -1,0 +1,31 @@
+和 Home中的基本一致
+<script>
+import request from '@/utils/request.js'
+export default {
+  name: 'User',
+  data() {
+    return {
+      page: 1, // 页码值
+      limit: 5 // 每页显示多少条数据
+    }
+  },
+  created() {
+    // this.initArticleList()
+  },
+  methods: {
+    // 封装获取文章列表数据的方法
+    async initArticleList() {
+      const { data: res } = await request.get('/articles', {
+        params: {
+          _page: this.page,
+          _limit: this.limit
+        }
+      })
+      console.log(res)
+    }
+  }
+}
+</script>
+
+促进代码复用：
+新建一个 API 文件，专门用来放所有和 [接口] 相关的文件。

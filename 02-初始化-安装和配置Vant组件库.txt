@@ -1,0 +1,29 @@
+安装和配置Vue的一个移动端组件库-Vant。
+Vant是一个轻量、可靠的 [移动端 Vue ] 组件库
+网址： [https://vant-contrib.gitee.io/vant/v2/#/zh-CN/]
+可以通过 [快速上手] 学习。
+[安装]：
+通过 npm 安装
+在现有项目中使用 Vant 时，可以通过 npm 或 yarn 进行安装：
+
+# Vue 3 项目，安装最新版 Vant：
+npm i vant -S
+
+# Vue 2 项目，安装 Vant 2：
+npm i vant@latest-v2 -S
+
+[配置]：
+本地开发时全部组件都导入，使用方式三，最后上线时再优化压缩体积。这样确实也方便开发了。
+// 方式三. 导入所有组件
+Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
+在入口函数 main.js 中配置。
+
+import Vue from 'vue';
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
+Tips: 配置按需引入后，将不允许直接导入所有组件。
+
+[使用]:
+根据文档直接复制在需要的组件中使用。

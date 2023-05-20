@@ -1,0 +1,45 @@
+在 less 里面，支持我们使用编程的方式来写 CSS 代码。
+[https://less.bootcss.com/] - less 中文官网 - 厉害之处在于可以[使用@“关键字”声明变量]，以及可以[运算]。
+
+在 src 目录中创建 theme.less 文件，在里面写样式，然后按照 [定制主题] 中的步骤操作即可。
+[https://vant-contrib.gitee.io/vant/v2/#/zh-CN/theme#shou-dong-yin-ru-yang-shi]
+
+先在入口文件中手动引入样式
+// 定制主题 - 覆盖默认的 less 变量 - 导入index.less - import 'vant/lib/index.less'
+import 'vant/lib/index.less'
+
+// 步骤二 修改样式变量
+如果 vue-cli 搭建的项目，可以在 vue.config.js 中进行配置。
+
+// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
+        lessOptions: {
+          modifyVars: {
+            // 可以通过 less 文件覆盖（文件路径为绝对路径）
+            hack: `true; @import "your-less-file-path.less";`,
+          },
+        },
+      },
+    },
+  },
+};
+
+
+// theme.less 文件如下：
+// 在这个文件中可以对 Vant 默认的 less 文件进行覆盖。
+// 使用@定义一个变量
+@title-color: #8f3b4e;
+@title-text-color: #fff;
+@title-font-size: 16px;
+
+
+// 覆盖 NavBar 的 less 样式
+// 变量名在对应的组件中会写，往下拉，找到 [样式变量]。
+@nav-bar-background-color: @title-color;
+@nav-bar-title-text-color: @title-text-color;
+@nav-bar-title-font-size: @title-font-size;
+

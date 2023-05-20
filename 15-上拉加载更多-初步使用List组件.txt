@@ -1,0 +1,14 @@
+<!-- 使用 van-list 实现上拉加载  -->
+      <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+        <ArticleInfo v-for="item in artlist" :key="item.aut_id" :title="item.title" :author="item.aut_name" :comments="item.commm_count" :pubdate="item.pubdate" :cover="item.cover"></ArticleInfo>
+      </van-list>
+
+ data() {
+    return {
+      page: 1, // 页码值
+      limit: 10, // 每页显示多少条数据
+      artlist: [], // 用来接收请求返回的 res 数组
+      loading: true, // 初始化为 true , 因为不想刚进页面时加载第二页的数据
+      finished: false
+    }
+  },

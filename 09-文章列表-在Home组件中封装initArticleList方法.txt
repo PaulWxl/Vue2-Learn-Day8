@@ -1,0 +1,23 @@
+methods: {
+    // 封装获取文章列表数据的方法
+    async initArticleList() {
+      const { data: res } = await request.get('/articles', {
+        params: {
+          _page: this.page,
+          _limit: this.limit
+        }
+      })
+      console.log(res)
+    }
+  }
+
+  created() {
+    this.initArticleList()
+  }
+
+  data() {
+    return {
+      page: 1, // 页码值
+      limit: 10 // 每页显示多少条数据
+    }
+  },

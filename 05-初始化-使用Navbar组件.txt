@@ -1,0 +1,16 @@
+看文档 - [Navbar] 导航栏 
+基础用法：
+<van-nav-bar title="黑马头条" :fixed="true" />
+
+export default {
+  methods: {
+  }
+};
+
+注意，有自己的 API， 其中，固定在顶部-fixed, 如果值为Bool型，又不得不加引号，则在前面加一个冒号。 :fixed="true" 或者 简写：只写一个 fixed (这种方法只适用于默认为 false, 希望改为 true 的情况。)
+注意，导航栏和标签页都固定定位了，会遮住内容的部分，所以给 根节点 div 加一个上下的 padding
+<div class="home-container"></div>
+
+.home-container {
+  padding: 46px 0 50px 0;
+}

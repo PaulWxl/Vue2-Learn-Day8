@@ -1,0 +1,30 @@
+// 自定义属性
+  props: {
+    // 文章的标题
+    title: {
+      type: String,
+      default: ''
+    },
+    // 作者名称
+    author: {
+      type: String,
+      default: ''
+    },
+    // 评论数量
+    comments: {
+      type: [Number, String], // type 可以指定为一个数组，数组中是所有可能的类型
+      default: ''
+    },
+    // 发布日期
+    pubdate: {
+      type: String,
+      default: ''
+    }
+  },
+
+ <span>作者：{{ author }} &nbsp;&nbsp; {{ comments }}条评论 &nbsp;&nbsp; 发布日期：{{ pubdate }}</span>
+ <span>{{ title }}</span>
+
+ <ArticleInfo v-for="item in artlist" :key="item.id" :title="item.title" :author="item.aut_name" :comments="item.commm_count" :pubdate="item.pubdate"></ArticleInfo>
+
+

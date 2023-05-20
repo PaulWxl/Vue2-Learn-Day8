@@ -1,0 +1,13 @@
+// 在这个文件中可以对 Vant 默认的 less 文件进行覆盖。
+// 使用@定义一个变量
+@title-color: #8f3b4e;
+@title-text-color: #fff;
+@title-font-size: 16px;
+
+
+// 覆盖 NavBar 的 less 样式
+// 变量名在对应的组件中会写，往下拉，找到 [样式变量]。
+@nav-bar-background-color: @title-color;
+@nav-bar-title-text-color: @title-text-color;
+@nav-bar-title-font-size: @title-font-size;
+

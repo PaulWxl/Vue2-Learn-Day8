@@ -1,0 +1,6 @@
+部署 - [配置参考] - [publicPath] - 在 module.exports 中配置 publicPath - 会生成一个 dist 文件夹。
+双击 index.html 即可打开。 - publicPath: './'
+
+介绍了一下 [Lodash]库
+[https://www.lodashjs.com/]
+Lodash 是一个一致性、模块化、高性能的 JavaScript 实用工具库。

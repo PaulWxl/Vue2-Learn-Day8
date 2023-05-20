@@ -1,0 +1,14 @@
+if (isRefresh) {
+        // 下拉刷新 - 新数据在前
+        this.artlist = [...res, ...this.artlist]
+      } else {
+        // 上拉加载 - 新数据在后 - 使用ES6的剩余参数运算符
+        this.artlist = [...this.artlist, ...res]
+        // 上拉加载得到数据后，把 loading 改为 false
+        this.loading = false
+      }
+
+      // 注意记得写 finished 为 true 的条件
+      if (res.length === 0) {
+        this.finished = true
+      } 

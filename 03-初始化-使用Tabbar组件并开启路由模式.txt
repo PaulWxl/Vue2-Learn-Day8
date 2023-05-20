@@ -1,0 +1,8 @@
+在 views 文件夹下建立 Home 和 User 文件夹。创建对应的 Vue 组件。
+尽量每一个组件都使用一个文件夹包裹。
+使用 [Tabbar 标签栏] 组件
+路由模式：
+<van-tabbar v-model="active">
+      <van-tabbar-item replace icon="home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item replace icon="user-o" to="/user">我的</van-tabbar-item>
+</van-tabbar>
